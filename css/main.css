@@ -5,7 +5,7 @@
 
 body {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: 1fr auto 1fr;
     grid-template-rows: repeat(3, auto);
     background-color: #2a2d3e;
 }
