@@ -73,8 +73,6 @@ body {
 
 
 .time-box {
-    grid-row: 1;
-    grid-column: 2;
     justify-self: center;
     background-color: #2a2d3e;
 }

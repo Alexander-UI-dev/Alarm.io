@@ -1,0 +1,11 @@
+@media (max-width: 470px) {
+    .main-container .time-box span {
+        font-size: 100px;
+    }    
+}
+
+@media (max-width: 320px) {
+    .main-container .time-box span {
+        font-size: 70px;
+    }    
+}
