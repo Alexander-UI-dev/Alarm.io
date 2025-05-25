@@ -1,0 +1,9 @@
+@media (max-width: 640px) {
+    .main-header h1 {
+        font-size: 18px;
+    }
+
+    .main-header .end-header .btn-preferens {
+        font-size: 16px;
+    }
+}
