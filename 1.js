@@ -1,1 +1,1 @@
-document.getElementsByTagName("body")[0].innerHTML += `${window.innerWidth}`
+//document.getElementsByTagName("body")[0].innerHTML += `${window.innerWidth}`
