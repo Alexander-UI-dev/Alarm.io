@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./css/media/@media--header.css">
         <link rel="stylesheet" href="./css/media/@media--time-box.css">
         <link rel="stylesheet" href="./css/media/@media--title-alarm.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
         <title>Будильник онлайн 3</title>
     </head>
     <body>
@@ -23,9 +24,31 @@
                 <span class="r">:</span>
                 <span class="minutes">16</span>
             </div>
-            <span class="date">Понедельник, 26 мая</span>
+            <span class="date">Понедельник, 26 мая</span>    
         </main>
         <span class="title-alarm">Установить время будильника:</span>
+        <div class="install-alarm">
+            <div class="hours_swiper swiper-block">
+                <div class="swiper swiperH">
+                    <div class="swiper-wrapper"></div>
+                </div>
+            </div>
+            <span class="title-time-hours">Часы</span>
+            <div class="minutes_swiper swiper-block">
+                <div class="swiper swiperM">
+                    <div class="swiper-wrapper"></div>
+                </div>
+            </div>
+            <span class="title-time-minutes">Минуты</span>
+            <select name="hours" id="selectHours" class="selectTime"></select>
+            <select name="minutes" id="selectMinutes" class="selectTime"></select>
+        </div>
+        <div class="popular-times">
+            
+        </div>
+        <script src="./js/isMobile.js"></script>
         <script src="./js/time.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script src="./js/swiperAlarm.js"></script>
     </body>
 </html>

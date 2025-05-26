@@ -6,7 +6,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
     background-color: #2a2d3e;
 }
 
@@ -24,7 +24,8 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .main-title {
@@ -104,8 +105,81 @@ body {
 .title-alarm {
     grid-row: 3;
     grid-column: 2/4;
-    margin-top: 25px;
+    margin-top: 35px;
+    margin-bottom: 25px;
     font-size: 1.25rem;
     font-weight: 400;
 }
+
+.install-alarm {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    grid-row: 4;
+    grid-column: 2;
+    height: 100px;
+}
+
+.swiper-block {
+    width: fit-content;
+}
+
+.swiper {
+    justify-self: left;
+    width: 60px;
+    height: 60px;
+}
+
+.swiper-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.title-time-hours {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.title-time-minutes {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.title-time-hours, .title-time-minutes {
+    margin-left: 10px;
+}
+
+.selectTime {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: oklch(0.24 0.05 263.09);
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 0), linear-gradient(135deg, currentColor 50%, transparent 0);
+    background-position: calc(100% - 20px) calc(1px + 50%), calc(100% - 16.1px) calc(1px + 50%);
+    background-repeat: no-repeat;
+    background-size: 4px 4px, 4px 4px;
+    border-color: transparent;
+    border-radius: .5rem;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: .875rem;
+    height: 3rem;
+    line-height: 2;
+    min-height: 3rem;
+    padding-inline-end: 2.5rem;
+    padding-inline-start: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: .5rem .75rem;
+    margin-top: 10px;
+}
+
 

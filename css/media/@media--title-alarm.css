@@ -5,12 +5,26 @@
     }
 }
 
-@media (max-width: 190px) {
+@media (max-width: 310px) {
     .title-alarm {
-        display: -webkit-box;
-        line-clamp: 2;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 260px) {
+    .title-alarm {
+        width: 200px;
+        white-space: nowrap;
         overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 240px) {
+    .title-alarm {
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
