@@ -101,3 +101,11 @@ body {
     content: attr(data-shortcat);
 }
 
+.title-alarm {
+    grid-row: 3;
+    grid-column: 2/4;
+    margin-top: 25px;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+

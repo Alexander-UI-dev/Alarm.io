@@ -1,0 +1,16 @@
+@media (max-width: 410px) {
+    .title-alarm {
+        grid-column: 1/4;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 190px) {
+    .title-alarm {
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
