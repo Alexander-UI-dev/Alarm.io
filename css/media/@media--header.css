@@ -1,16 +1,23 @@
 @media (max-width: 600px) {
-    .main-title-container .main-title {
+    .main-title {
         font-size: 23px;
     }
 
-    .btn-container .btn-preferens {
+    .btn-preferens {
+        width: 30px;
+        height: 30px;
         font-size: 18px;
+    }
+
+    .start-div {
+        width: 30px;
+        height: 30px;
     }
 }
 
 
 @media (max-width: 320px) {
-    .main-title-container .main-title {
+    .main-title {
         width: 200px;
         display: inline-block;    
         overflow: hidden;  
@@ -18,14 +25,21 @@
         text-overflow: ellipsis;
     }
 
-    .btn-container .btn-preferens {
+    .btn-preferens {
+        width: 25px;
+        height: 25px;
         font-size: 16px;
+    }
+
+    .start-div {
+        width: 25px;
+        height: 25px;
     }
 }
 
 
 @media (max-width: 255px) {
-    .main-title-container .main-title {
+    .main-title {
         width: 100px;
         display: inline-block;    
         overflow: hidden;  
@@ -33,13 +47,13 @@
         text-overflow: ellipsis;
     }
 
-    .btn-container .btn-preferens {
+    .btn-preferens {
         font-size: 16px;
     }
 }
 
 @media (max-width: 150px) {
-    .main-title-container .main-title {
+    .main-title {
         width: 70px;
         display: inline-block;    
         overflow: hidden;  
@@ -47,7 +61,7 @@
         text-overflow: ellipsis;
     }
 
-    .btn-container .btn-preferens {
+    .btn-preferens {
         font-size: 16px;
     }
 }

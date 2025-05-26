@@ -10,6 +10,11 @@ body {
     background-color: #2a2d3e;
 }
 
+.start-div {
+    width: 45px;
+    height: 45px;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -22,7 +27,8 @@ body {
     padding: 0;
 }
 
-.main-title-container {
+.main-title {
+    font-size: 32px;
     justify-self: center;
     align-self: center;
     grid-row: 1;
@@ -31,18 +37,11 @@ body {
     margin: 0;
 }
 
-.main-title-container .main-title {
-    font-size: 32px;
-}
-
-.btn-container {
+.btn-preferens {
     grid-row: 1;
     grid-column: 3;
     justify-self: end;
     align-self: center;
-}
-
-.btn-container .btn-preferens {
     width: 45px;
     height: 45px;
     cursor: pointer;
@@ -57,9 +56,16 @@ body {
 .btn-preferens i {
     transition: all 1s;
 }
+@media (hover: hover) {
+    .btn-preferens:hover {
+        background-color: rgb(211, 199, 199, 30%);
+    }
+}
 
-.btn-preferens:hover {
-    background-color: rgb(211, 199, 199, 30%);
+@media (hover: none) {
+    .btn-preferens:active {
+        background-color: rgb(211, 199, 199, 30%);
+    }
 }
 
 .overlay {
@@ -76,6 +82,7 @@ body {
 
 .time-box {
     justify-self: center;
+    align-self: center;
     background-color: #2a2d3e;
 }
 
@@ -86,6 +93,11 @@ body {
 .date {
     align-self: center;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 400;
+}
+
+.main-container .date::before {
+    font-size: 0;
+    content: attr(data-shortcat);
 }
 
