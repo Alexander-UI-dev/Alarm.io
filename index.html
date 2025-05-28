@@ -18,7 +18,9 @@
         <button class="btn-preferens" title="Настройки">
             <i class="fa fa-sliders" aria-hidden="true"></i>
         </button>
-        <div class="overlay"></div>
+        <div class="overlay">
+            <div class="modal-settings"></div>
+        </div>
         <main class="main-container">
             <div class="time-box">
                 <span class="hours">15</span>
@@ -41,17 +43,24 @@
                 </div>
             </div>
             <span class="title-time-minutes">Минуты</span>
-            <select name="hours" id="selectHours" class="selectTime"></select>
-            <select name="minutes" id="selectMinutes" class="selectTime"></select>
+            <select name="hours" id="selectHours" class="select"></select>
+            <select name="minutes" id="selectMinutes" class="select"></select>
         </div>
         <div class="popular-times"></div>
-        <div class="musics-alarm">
-            <select name="music" id="selectMusic" class="musicSelect"></select>
+        <div class="music-alarm">
+            <select name="music" id="selectMusic" class="select"></select>
+            <button type="button" class="btn">Добавить свою композицию</button>
         </div>
+        <div class="name-alarm">
+            <span class="title-alarm-name">Название будильника:</span>
+            <input value="Будильник" type="text" name="nameAlarm" id="inputNameAlarm">
+        </div>
+        <button type="button" class="btn main-button">Установить будильник</button>
         <script src="./js/isMobile.js"></script>
         <script src="./js/time.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
         <script src="./js/swiperAlarm.js"></script>
         <script src="./js/popularTime.js"></script>
+        <script src="./js/music.js"></script>
     </body>
 </html>
