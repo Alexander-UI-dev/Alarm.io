@@ -4,11 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/switch.css">
         <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./css/media/@media--header.css">
         <link rel="stylesheet" href="./css/media/@media--time-box.css">
         <link rel="stylesheet" href="./css/media/@media--title-alarm.css">
         <link rel="stylesheet" href="./css/media/@media--popular-time.css">
+        <link rel="stylesheet" href="./css/media/@media--dialog.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
         <title>Будильник онлайн 3</title>
     </head>
@@ -18,7 +20,6 @@
         <button class="btn-preferens" title="Настройки">
             <i class="fa fa-sliders" aria-hidden="true"></i>
         </button>
-        <div class="overlay"></div>
         <main class="main-container">
             <div class="time-box">
                 <span class="hours">15</span>
@@ -27,6 +28,9 @@
             </div>
             <span class="date">Понедельник, 26 мая</span>    
         </main>
+        <div class="overlay">
+            <div class="sidebar-settings"></div>
+        </div>
         <span class="title-alarm">Установить время будильника:</span>
         <div class="install-alarm">
             <div class="hours_swiper swiper-block">
@@ -60,5 +64,6 @@
         <script src="./js/swiperAlarm.js"></script>
         <script src="./js/popularTime.js"></script>
         <script src="./js/music.js"></script>
+        <script src="./js/sidebar.js"></script>
     </body>
 </html>
