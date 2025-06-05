@@ -1,7 +1,10 @@
 const overlay = document.querySelector(".overlay");
+
 const sideBarSettings = document.querySelector(".overlay .sidebar-settings");
+
 const btnSettings = document.querySelector(".btn-preferens");
-const closeBtnSettings = document.querySelector(".close-btn-settings");
+const closeBtnsSettings = document.querySelectorAll(".close-btn-settings");
+
 const numberFontEl = document.getElementById("number-font-checkbox");
 
 const sliderVolume = document.getElementById("range-volume");
@@ -25,7 +28,7 @@ overlay.addEventListener("click", (e) => {
     }
 })
 
-closeBtnSettings.addEventListener("click", () => {
+closeBtnsSettings[0].addEventListener("click", () => {
     overlay.classList.remove("active-overlay");
     sideBarSettings.classList.remove("active-sidebar-settings");
 })

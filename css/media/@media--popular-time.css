@@ -1,5 +1,5 @@
 @media (max-width: 500px) {
     .popular-times .popular-time i {
-        display: none;
+        visibility: hidden;
     }
 }

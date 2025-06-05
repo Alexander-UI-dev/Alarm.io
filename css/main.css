@@ -41,7 +41,21 @@ body {
     width: fit-content;
     height: 100%;
     background-color: #2a2d3e;
-    color: black;
+    padding: 10px;
+    transition: all .4s ease;
+}
+
+.overlay .sidebar-music {
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    background-color: #2a2d3e;
     padding: 10px;
     transition: all .4s ease;
 }
@@ -50,29 +64,37 @@ body {
     margin-left: -500px;
 }
 
+.overlay .sidebar-music, .overlay .sidebar-music > * {
+    margin-right: -500px;
+}
+
 .overlay .sidebar-settings.active-sidebar-settings, .sidebar-settings.active-sidebar-settings > * {
     margin-left: 0;
 }
 
-.overlay .sidebar-settings ul {
+.overlay .sidebar-music.active-sidebar-music, .sidebar-music.active-sidebar-music > * {
+    margin-right: 0;
+}
+
+.overlay .sidebar-settings ul, .overlay .sidebar-music ul {
     margin: 0;
     padding: 10px;
     list-style: none;
     height: fit-content;
 }
 
-.overlay .sidebar-settings ul > li:first-child {
+.overlay .sidebar-settings ul > li:first-child, .overlay .sidebar-music ul > li:first-child {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(2, auto);
     align-items: center;
 }
 
-.overlay .sidebar-settings ul > li:first-child > span {
+.overlay .sidebar-settings ul > li:first-child > span, .overlay .sidebar-music ul > li:first-child > span {
     font-size: 24px;
 }
 
-.overlay .sidebar-settings ul > li:first-child > button {
+.overlay .sidebar-settings ul > li:first-child > button, .overlay .sidebar-music ul > li:first-child > button {
     display: none;
     background-color: #2a2d3e;
     border: none;
@@ -107,7 +129,7 @@ body {
     margin-top: 20px;
 }
 
-.overlay .sidebar-settings ul > li > span {
+.overlay .sidebar-settings ul > li > label, .overlay .sidebar-settings ul > li > span {
     font-size: 18px;
     align-self: center;
 }
@@ -147,6 +169,28 @@ body {
     appearance: none;
     padding: 10px;
     font-size: 16px;
+}
+
+.overlay .sidebar-music ul > li:nth-child(2) {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: auto;
+    row-gap: 10px;
+}
+
+.overlay .sidebar-music ul > li label {
+    font-size: 18px;
+}
+
+.overlay .sidebar-music ul > li input {
+    height: 20px;
+    padding: 10px;
+}
+
+.overlay .sidebar-music ul > li:nth-child(3) {
+    display: grid;
+    margin-top: 35px;
 }
 
 .main-container {
@@ -191,6 +235,7 @@ body {
 .btn-preferens i {
     transition: all 1s;
 }
+
 @media (hover: hover) {
     .btn-preferens:hover {
         background-color: rgb(211, 199, 199, 30%);
@@ -389,7 +434,7 @@ body {
     font-weight: 400;
 }
 
-.name-alarm input {
+.text-fild {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

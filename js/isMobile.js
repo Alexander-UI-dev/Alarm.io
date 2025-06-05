@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("selectMinutes").style.display = "none";
         document.querySelector(".title-time-hours").style.alignSelf = "start";
         document.querySelector(".title-time-minutes").style.alignSelf = "start";
-        document.querySelector(".close-btn-settings").style.display = "block";
+        document.querySelectorAll(".close-btn-settings").forEach(el => el.style.display = "block");
     } else {
         document.querySelector(".title-time-hours").style.gridRow = "1";
         document.querySelector(".title-time-minutes").style.gridRow = "1";
