@@ -11,5 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".hours_swiper").style.display = "none";
         document.querySelector(".minutes_swiper").style.display = "none";
     }
+
+    if(localStorage.settingsAlarm) {
+        loadSettings()
+    }
 })
 
