@@ -12,8 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".minutes_swiper").style.display = "none";
     }
 
-    if(localStorage.settingsAlarm) {
+    if(localStorage.settingsAlarm) 
         loadSettings()
+    
+    if(localStorage.newMusic) {
+        const addNewMusic = JSON.parse(localStorage.getItem("newMusic"));
+        for(let i = 0; i < addNewMusic.length; i++) {
+            addMusic(Object.keys(addNewMusic[i])[0]);
+        }
+        
     }
 })
 

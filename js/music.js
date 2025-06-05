@@ -1,6 +1,8 @@
 const musicSelect = document.querySelector(".music-alarm #selectMusic");
+const addMusicBtn = document.getElementById("add-new-music");
 
-const musics = [
+
+const music = [
     {"Будильник": "./audio/alarm.mp3"},
     {"Прерывистый сигнал": "./audio/signal.mp3"},
     {"Ку-ка-ре-ку": "./audio/petuha.mp3"},
@@ -13,6 +15,19 @@ const musics = [
     {"Белый шум": "./audio/shum.mp3"}
 ];
 
-for(let i = 0; i < musics.length; i++) { 
-    musicSelect.innerHTML += `<option value="${Object.keys(musics[i])[0]}">${Object.keys(musics[i])[0]}</option>`
+const newMusic = []
+
+addMusicBtn.addEventListener("click", () => {
+    newMusic.push({[document.getElementById("name-input").value]: document.getElementById("url-input").value});
+    localStorage.setItem("newMusic", JSON.stringify(newMusic));
+})
+
+
+function addMusic(newText) {
+    musicSelect.innerHTML += `<option value="${newText}">${newText}</option>`
 }
+
+for(let i = 0; i < music.length; i++) { 
+    musicSelect.innerHTML += `<option value="${Object.keys(music[i])[0]}">${Object.keys(music[i])[0]}</option>`
+}
+
