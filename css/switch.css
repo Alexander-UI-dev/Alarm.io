@@ -1,6 +1,7 @@
 .switch {
     position: relative;
     display: inline-block;
+    justify-self: right;
     width: 60px;
     height: 34px;
 }
@@ -56,3 +57,4 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+

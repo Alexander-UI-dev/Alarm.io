@@ -1,0 +1,15 @@
+@media (max-width: 450px) {
+    .overlay .sidebar-settings {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 365px) {
+    .overlay .sidebar-settings ul > li:first-child {
+        font-size: 20px;
+    }
+    .overlay .sidebar-settings ul > :not(li:first-child) span {
+        font-size: 15px;
+    }
+}

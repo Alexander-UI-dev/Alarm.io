@@ -5,12 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/switch.css">
+        <link rel="stylesheet" href="./css/slider.css">
         <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./css/media/@media--header.css">
         <link rel="stylesheet" href="./css/media/@media--time-box.css">
         <link rel="stylesheet" href="./css/media/@media--title-alarm.css">
         <link rel="stylesheet" href="./css/media/@media--popular-time.css">
-        <link rel="stylesheet" href="./css/media/@media--dialog.css">
+        <link rel="stylesheet" href="./css/media/@media--sidebar-settings.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
         <title>Будильник онлайн 3</title>
     </head>
@@ -29,7 +30,40 @@
             <span class="date">Понедельник, 26 мая</span>    
         </main>
         <div class="overlay">
-            <div class="sidebar-settings"></div>
+            <div class="sidebar-settings">
+                <ul>
+                    <li>Настройки будильника</li>
+                    <li>
+                        <span>Повторять звуки будильника</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <span>Цифровой шрифт</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <span>Громкость будильника</span>
+                        <input type="number" name="valueVolume" id="number-volume">
+                        <input type="range" name="valueVolume" id="range-volume" class="range" value="20" max="100" min="0" step="1">
+                    </li>
+                    <li>
+                        <span>Цвет</span>
+                        <div style="margin-top: 18px;">
+                            <button type="button" style="background-color: white; color: white;" class="btn-color"></button>
+                            <button type="button" style="background-color: orange; color: orange;" class="btn-color"></button>
+                            <button type="button" style="background-color: red; color: red;" class="btn-color"></button>
+                            <button type="button" style="background-color: green; color: green;" class="btn-color"></button>
+                            <button type="button" style="background-color: #1976D2; color: #1976D2;" class="btn-color"></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <span class="title-alarm">Установить время будильника:</span>
         <div class="install-alarm">
