@@ -35,6 +35,7 @@ body {
 
 .overlay .sidebar-settings {
     display: flex;
+    overflow: auto;
     align-items: flex-start;
     justify-content: center;
     width: fit-content;
@@ -61,7 +62,24 @@ body {
 }
 
 .overlay .sidebar-settings ul > li:first-child {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+}
+
+.overlay .sidebar-settings ul > li:first-child > span {
     font-size: 24px;
+}
+
+.overlay .sidebar-settings ul > li:first-child > button {
+    display: none;
+    background-color: #2a2d3e;
+    border: none;
+    outline: none;
+    justify-self: end;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .overlay .sidebar-settings ul > li:nth-child(5) {
