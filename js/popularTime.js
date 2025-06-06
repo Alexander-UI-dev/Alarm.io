@@ -22,6 +22,13 @@ for(let i = 0; i < popularTime.length; i++) {
 
 const popularTimes = document.querySelectorAll(".popular-times > span");
 
+function changeSwiperValue(val, mode) {
+    if(mode === "hours") 
+        swiperHour.slideTo(val, 1)
+    else
+        swiperMinutes.slideTo(val, 1)
+}
+
 popularTimes.forEach(element => {
     element.addEventListener("click", (e) => {
         const selectH = document.getElementById("selectHours");
@@ -29,6 +36,9 @@ popularTimes.forEach(element => {
         if(selectH.style.display === "") {
             selectH.value = e.target.getAttribute("data-hours-time");
             selectM.value = e.target.getAttribute("data-minutes-time");
+        } else {
+            changeSwiperValue(+e.target.getAttribute("data-hours-time"), "hours");
+            changeSwiperValue(+e.target.getAttribute("data-minutes-time"), "minutes");
         }
     })
 })
