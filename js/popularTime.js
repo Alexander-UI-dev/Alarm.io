@@ -1,6 +1,6 @@
 const popularTimesBlock = document.querySelector(".popular-times");
 
-const popularTimes = [
+const popularTime = [
     "5:00",
     "5:30",
     "6:00",
@@ -12,10 +12,23 @@ const popularTimes = [
 ]
 
 
-for(let i = 0; i < popularTimes.length; i++) {
+for(let i = 0; i < popularTime.length; i++) {
     popularTimesBlock.innerHTML += `
-    <span class="popular-time">
+    <span class="popular-time" data-hours-time="${popularTime[i].at(0)}" data-minutes-time="${popularTime[i].at(2) === '0' ? popularTime[i].slice(3) : popularTime[i].slice(2)}">
         <i class="fa fa-bell-o" aria-hidden="true"></i>
-        ${popularTimes[i]}
+        ${popularTime[i]}
     </span>`
 }
+
+const popularTimes = document.querySelectorAll(".popular-times > span");
+
+popularTimes.forEach(element => {
+    element.addEventListener("click", (e) => {
+        const selectH = document.getElementById("selectHours");
+        const selectM = document.getElementById("selectMinutes");
+        if(selectH.style.display === "") {
+            selectH.value = e.target.getAttribute("data-hours-time");
+            selectM.value = e.target.getAttribute("data-minutes-time");
+        }
+    })
+})
