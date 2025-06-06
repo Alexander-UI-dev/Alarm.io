@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <select name="music-select" id="select-1">
+            <option value="new-1">Hello</option>
+            <option value="2">HI!</option>
+            <option value="3">NO</option>
+            <option value="new-4">YES</option>
+        </select>
+        <button type="button" style="display: none;" id="btn-change-music">Редактировать или удалить</button>
+        <script>
+            const select = document.getElementById("select-1");
+            document.addEventListener("DOMContentLoaded", () => { 
+                if(select.value.includes("new")) document.getElementById("btn-change-music").style.display = "block";
+            })
+            select.addEventListener("change", (e) => {
+                if(e.target.value.includes("new")) {
+                    document.getElementById("btn-change-music").style.display = "block";
+                } else {
+                    document.getElementById("btn-change-music").style.display = "none";
+                }
+            })
+        </script>
+    </body>
+</html>

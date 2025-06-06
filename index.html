@@ -75,21 +75,25 @@
             <div class="sidebar-music">
                 <ul>
                     <li>
-                        <span>Добавить новую композицию</span>
+                        <span>Добавить композицию</span>
                         <button type="button" class="close-btn-settings">
                             <i class="fa fa-times" aria-hidden="true" style="color: #fb7085;"></i>
                         </button>
                     </li>
                     <li>
-                        <label for="name-input">Введите имя композиции:</label>
-                        <input type="text" name="nameInput" id="name-input" placeholder="Имя" class="text-fild">
-                    </li>
-                    <li>
-                        <label for="url-input">Введите URL композиции:</label>
-                        <input type="text" name="urlInput" id="url-input" placeholder="URL" class="text-fild">
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="add-new-music">Добавить музыку</button>
+                        <form id="music-form">
+                            <label id="label-name" for="name-input" style="margin-top: 20px;">Введите имя композиции:</label>
+                            <input type="text" name="nameInput" id="name-input" placeholder="Имя" class="text-fild" required>
+
+                            <label id="label-url" for="url-input" style="margin-top: 10px;">Введите URL композиции:</label>
+                            <input type="text" name="urlInput" id="url-input" placeholder="URL" class="text-fild" required>
+
+                            <button type="submit" class="btn" id="add-new-music">Добавить музыку</button>
+                            <button type="button" class="btn" id="delete-new-music" 
+                                style="display: none; background-color: rgb(206, 105, 117); margin-top: 20px;">
+                                    Удалить композицию
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -115,6 +119,9 @@
         <div class="music-alarm">
             <select name="music" id="selectMusic" class="select"></select>
             <button type="button" class="btn" id="btn-music">Добавить свою композицию</button>
+            <button type="button" class="btn" id="btn-change-music" style="display: none; background-color: #ce6975;">
+                Редактировать или удалить композицию
+            </button>
         </div>
         <div class="name-alarm">
             <span class="title-alarm-name">Название будильника:</span>

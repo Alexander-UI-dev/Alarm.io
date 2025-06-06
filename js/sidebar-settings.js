@@ -19,18 +19,21 @@ const objSettings = {numberFont: false, volume: 20, colorTime: "white"};
 btnSettings.addEventListener("click", () => {
     overlay.classList.add("active-overlay");
     sideBarSettings.classList.add("active-sidebar-settings");
+    document.body.style.overflow = "hidden";
 })
 
 overlay.addEventListener("click", (e) => {
     if(e.target === overlay) {
         overlay.classList.remove("active-overlay");
         sideBarSettings.classList.remove("active-sidebar-settings");
+        document.body.style.overflow = "auto";
     }
 })
 
 closeBtnsSettings[0].addEventListener("click", () => {
     overlay.classList.remove("active-overlay");
     sideBarSettings.classList.remove("active-sidebar-settings");
+    document.body.style.overflow = "auto";
 })
 
 numberFontEl.addEventListener("change", () => {
@@ -85,6 +88,4 @@ function loadSettings() {
         document.querySelector(".minutes").style.color = settings.colorTime;
     }
 }
-
-
 

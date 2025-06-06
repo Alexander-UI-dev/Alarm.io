@@ -171,27 +171,16 @@ body {
     font-size: 16px;
 }
 
-.overlay .sidebar-music ul > li:nth-child(2), .overlay .sidebar-music ul > li:nth-child(3) {
-    margin-top: 20px;
+.overlay .sidebar-music ul > li:nth-child(2) form {
     display: grid;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(5, auto);
     grid-template-columns: auto;
     row-gap: 10px;
 }
 
-.overlay .sidebar-music ul > li label {
-    font-size: 18px;
-}
-
-.overlay .sidebar-music ul > li input {
-    height: 20px;
-    padding: 10px;
-}
-
-.overlay .sidebar-music ul > li:nth-child(4) {
-    display: grid;
+.overlay .sidebar-music ul > li:nth-child(2) button {
     margin-top: 35px;
-}
+} 
 
 .main-container {
     display: flex;
