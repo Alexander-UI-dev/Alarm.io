@@ -8,7 +8,7 @@
 body {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: repeat(8, auto);
+    grid-template-rows: repeat(10, auto);
     background-color: #2a2d3e;
 }
 
@@ -104,7 +104,7 @@ body {
     cursor: pointer;
 }
 
-.overlay .sidebar-settings ul > li:nth-child(5) {
+.overlay .sidebar-settings ul > li:nth-child(6) {
     margin-top: 20px;
     display: grid;
     grid-template-rows: repeat(2, auto);
@@ -112,14 +112,14 @@ body {
     row-gap: 10px;
 }
 
-.overlay .sidebar-settings ul > li:nth-child(5) div {
+.overlay .sidebar-settings ul > li:nth-child(6) div {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(5, 28px);
     column-gap: 15px;
 }
 
-.overlay .sidebar-settings ul > li:nth-child(2), .overlay .sidebar-settings ul > li:nth-child(3) {
+.overlay .sidebar-settings ul > li:nth-child(2), .overlay .sidebar-settings ul > li:nth-child(3), .overlay .sidebar-settings ul > li:nth-child(4) {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 60px;
@@ -134,7 +134,7 @@ body {
     align-self: center;
 }
 
-.overlay .sidebar-settings ul > li:nth-child(4) {
+.overlay .sidebar-settings ul > li:nth-child(5) {
     display: grid;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: 1fr 80px;
@@ -142,7 +142,7 @@ body {
     margin-top: 20px;
 }
 
-.overlay .sidebar-settings ul > li:nth-child(6) {
+.overlay .sidebar-settings ul > li:nth-child(7) {
     display: grid;
     margin-top: 30px;
 }
@@ -178,9 +178,23 @@ body {
     row-gap: 10px;
 }
 
+.overlay .sidebar-music ul > li:nth-child(2) div {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    cursor: pointer;
+}
+
+.overlay .sidebar-music ul > li:nth-child(2) div > input {
+    grid-row: 1;
+    grid-column: 1;
+    opacity: 0;
+    cursor: pointer;
+}
+
 .overlay .sidebar-music ul > li:nth-child(2) button {
     margin-top: 35px;
-} 
+}
 
 .main-container {
     display: flex;
@@ -345,9 +359,28 @@ body {
     margin-top: 10px;
 }
 
+.install-alarm-day {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+    grid-row: 5;
+    grid-column: 2;
+}
+
+.install-alarm-day span {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.install-alarm-day select {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+}
+
 .popular-times {
     margin-top: 20px;
-    grid-row: 5;
+    grid-row: 6;
     grid-column: 2;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -384,7 +417,7 @@ body {
 
 .music-alarm {
     margin-top: 15px;
-    grid-row: 6;
+    grid-row: 7;
     grid-column: 2;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -408,8 +441,39 @@ body {
     font-weight: bold;
 }
 
+.fake-input {
+    display: none;
+    grid-row: 1;
+    grid-column: 1;
+    margin-top: 0 !important;
+    background-color: #101729;
+    color: white;
+    border: 1px solid rgb(206, 105, 117);
+    transition: all .3s;
+}
+
+@media (hover: hover) {
+    .overlay .sidebar-music ul > li:nth-child(2) div:hover .fake-input {
+        background-color: rgb(206, 105, 117);
+    }
+
+    .fake-input:hover {
+        background-color: rgb(206, 105, 117);
+    }
+}
+
+@media (hover: active) {
+    .overlay .sidebar-music ul > li:nth-child(2) div:active .fake-input {
+        background-color: rgb(206, 105, 117);
+    }
+
+    .fake-input:active {
+        background-color: rgb(206, 105, 117);
+    }
+}
+
 .name-alarm {
-    grid-row: 7;
+    grid-row: 8;
     grid-column: 2;
     display: grid;
     grid-template-rows: repeat(2, auto);
@@ -441,7 +505,7 @@ body {
 }
 
 .main-button {
-    grid-row: 8;
+    grid-row: 9;
     grid-column: 2;
     margin-top: 40px;
 }

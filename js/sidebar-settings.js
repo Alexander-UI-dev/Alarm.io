@@ -14,7 +14,10 @@ const btnColorContainer = document.querySelectorAll(".btn-color-container > butt
 
 const btnMemory = document.getElementById("btn-memory-settings");
 
-const objSettings = {numberFont: false, volume: 20, colorTime: "white"};
+const repeatSound = document.getElementById("repeat-sound");
+const autoChangeValueSelect = document.getElementById("change-value-select");
+
+const objSettings = {repeatSound: true, autoChangeValueSelect: true, numberFont: false, volume: 20, colorTime: "white"};
 
 btnSettings.addEventListener("click", () => {
     overlay.classList.add("active-overlay");
@@ -39,6 +42,16 @@ closeBtnsSettings[0].addEventListener("click", () => {
 numberFontEl.addEventListener("change", () => {
     document.querySelector(".time-box").classList.toggle("number-font");
     objSettings.numberFont = document.querySelector(".time-box").classList.contains("number-font");
+})
+
+autoChangeValueSelect.addEventListener("change", (e) => {
+    objSettings.autoChangeValueSelect = e.target.checked;
+    isCheckedAutoChangeSwitch = e.target.checked;
+})
+
+
+repeatSound.addEventListener("change", (e) => {
+    objSettings.repeatSound = e.target.checked;
 })
 
 sliderVolume.addEventListener("input", (e) => {
@@ -74,6 +87,12 @@ function loadSettings() {
     if(settings.numberFont) {
         document.querySelector(".time-box").classList.add("number-font");
         numberFontEl.checked = true;
+    }
+    if(!settings.repeatSound) {
+        repeatSound.checked = settings.repeatSound;
+    }
+    if(!settings.autoChangeValueSelect) {
+        autoChangeValueSelect.checked = settings.autoChangeValueSelect;
     }
     if(settings.volume !== 20) {
         sliderVolume.value = settings.volume;

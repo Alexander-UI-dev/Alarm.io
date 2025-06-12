@@ -3,10 +3,13 @@ const sideBarMusic = document.querySelector(".overlay .sidebar-music");
 const sidebarMusicTitle = document.querySelector(".overlay .sidebar-music ul > li > span");
 
 const sidebarMusicNameInput = document.getElementById("name-input");
-const sidebarMusicUrlInput = document.getElementById("url-input");
-
 const sidebarMusicNameLabel = document.getElementById("label-name");
+
+const sidebarMusicUrlInput = document.getElementById("url-input");
 const sidebarMusicUrlLabel = document.getElementById("label-url");
+
+const sidebarMusicFileInput = document.getElementById("file-input");
+const sidebarMusicFileLabel = document.getElementById("label-file");
 
 const sidebarMusicMainBtn = document.getElementById("add-new-music");
 const sidebarMusicDeleteBtn = document.getElementById("delete-new-music");
@@ -14,10 +17,10 @@ const sidebarMusicDeleteBtn = document.getElementById("delete-new-music");
 const btnMusic = document.getElementById("btn-music");
 const btnChangeMusic = document.getElementById("btn-change-music");
 
-
+const fakeFileButton = document.getElementById("fake-file-input");
 
 btnMusic.addEventListener("click", () => {
-    if(sidebarMusicTitle.textContent === "Добавить композицию") {
+    if(btnMusic.textContent === "Добавить свою композицию") {
         overlay.classList.add("active-overlay");
         sideBarMusic.classList.add("active-sidebar-music");
         document.body.style.overflow = "hidden";
@@ -25,7 +28,7 @@ btnMusic.addEventListener("click", () => {
         replaceInterfaceMusicSidebar({
             title: "Добавить композицию",
             nameValue: "",
-            urlValue: "",
+            valueToMusic: "",
             labelName: "Введите имя композиции:",
             labelURL: "Введите URL композиции:",
             mainBtnText: "Добавить музыку",
@@ -42,7 +45,8 @@ btnChangeMusic.addEventListener("click", () => {
     replaceInterfaceMusicSidebar({
         title: "Настройки композиции",
         nameValue: musicSelect.value.slice(0, -4),
-        urlValue: document.querySelectorAll("#selectMusic > option")[document.querySelector("#selectMusic").selectedIndex].getAttribute("title"),
+        fileMode: JSON.parse(document.querySelectorAll("#selectMusic > option")[document.querySelector("#selectMusic").selectedIndex].getAttribute("data-is-file")),
+        valueToMusic: document.querySelectorAll("#selectMusic > option")[document.querySelector("#selectMusic").selectedIndex].getAttribute("title"),
         labelName: "Имя композиции",
         labelURL: "URL композиции",
         mainBtnText: "Изменить настройки",
@@ -65,11 +69,31 @@ closeBtnsSettings[1].addEventListener("click", () => {
     document.body.style.overflow = "auto";
 })
 
+function changeIntrefaceToSelection() {
+    if(document.getElementById("url-file").value === "file") {
+        sidebarMusicUrlLabel.style.display = "none";
+        sidebarMusicUrlInput.style.display = "none";
+        fakeFileButton.style.display = "block";
+        sidebarMusicFileLabel.style.display = "block";
+        sidebarMusicUrlInput.removeAttribute("required")
+        fakeFileButton.setAttribute("required", "true");
+    } else {
+        sidebarMusicUrlLabel.style.display = "block";
+        sidebarMusicUrlInput.style.display = "block";
+        fakeFileButton.style.display = "none";
+        sidebarMusicFileLabel.style.display = "none";
+        fakeFileButton.removeAttribute("required");
+        sidebarMusicUrlInput.setAttribute("required", "true");
+    }
+}
+
+document.getElementById("url-file").addEventListener("change", changeIntrefaceToSelection)
+
 function clearSidebar() {
     overlay.classList.remove("active-overlay");
     sideBarMusic.classList.remove("active-sidebar-music");
     sidebarMusicNameInput.value = "";
-    sidebarMusicUrlInput.value = "";
+    sidebarMusicUrlInput.style.display === "none" ? setInitialFileName("") : sidebarMusicUrlInput.value = "";
 }
 
 sidebarMusicDeleteBtn.addEventListener("click", () => {
@@ -90,13 +114,39 @@ sidebarMusicDeleteBtn.addEventListener("click", () => {
 
 function replaceInterfaceMusicSidebar(objNewInterface) {
     sidebarMusicTitle.textContent = objNewInterface.title; 
+    if(objNewInterface.fileMode === true) 
+        document.getElementById("url-file").value = "file" 
+    else 
+        document.getElementById("url-file").value = "URL";
 
+    changeIntrefaceToSelection()
     sidebarMusicNameInput.value = objNewInterface.nameValue; 
-    sidebarMusicUrlInput.value = objNewInterface.urlValue;
+    sidebarMusicUrlInput.style.display === "none" ? setInitialFileName(objNewInterface.valueToMusic) :   
+                                            sidebarMusicUrlInput.value = objNewInterface.valueToMusic;
 
     sidebarMusicNameLabel.textContent = objNewInterface.labelName; 
     sidebarMusicUrlLabel.textContent = objNewInterface.labelURL;
 
     sidebarMusicMainBtn.textContent = objNewInterface.mainBtnText; 
     sidebarMusicDeleteBtn.style.display = objNewInterface.displayBtn;
+}
+
+function setInitialFileName(filename) {
+    if (filename) {
+        fakeFileButton.textContent = filename;
+    }
+}
+
+function initInputFile() {
+    const realFileInput = document.getElementById("file-input");
+
+    realFileInput.addEventListener('change', function() {
+        if(this.files && this.files[0]) {
+            fakeFileButton.textContent = this.files[0].name;
+        }
+    });
+
+    fakeFileButton.addEventListener('click', function() {
+        realFileInput.click(); 
+    });
 }

@@ -11,15 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".hours_swiper").style.display = "none";
         document.querySelector(".minutes_swiper").style.display = "none";
     }
-
-    if(localStorage.settingsAlarm) 
-        loadSettings()
+    
     
     if(localStorage.newMusic) {
         const addNewMusic = JSON.parse(localStorage.getItem("newMusic"));
         for(let i = 0; i < addNewMusic.length; i++) {
-            addMusic(Object.keys(addNewMusic[i])[0], Object.values(addNewMusic[i])[0]);
+            addMusic(Object.keys(addNewMusic[i])[0], Object.values(addNewMusic[i])[0], Object.values(addNewMusic[i])[1]);
         }
     }
+    
+    initInputFile()
 })
 
