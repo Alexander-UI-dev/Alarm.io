@@ -75,6 +75,7 @@ function changeIntrefaceToSelection() {
         sidebarMusicUrlInput.style.display = "none";
         fakeFileButton.style.display = "block";
         sidebarMusicFileLabel.style.display = "block";
+        document.querySelector(".overlay .sidebar-music ul li form div").style.display = "grid";
         sidebarMusicUrlInput.removeAttribute("required")
         fakeFileButton.setAttribute("required", "true");
     } else {
@@ -82,6 +83,7 @@ function changeIntrefaceToSelection() {
         sidebarMusicUrlInput.style.display = "block";
         fakeFileButton.style.display = "none";
         sidebarMusicFileLabel.style.display = "none";
+        document.querySelector(".overlay .sidebar-music ul li form div").style.display = "none";
         fakeFileButton.removeAttribute("required");
         sidebarMusicUrlInput.setAttribute("required", "true");
     }
