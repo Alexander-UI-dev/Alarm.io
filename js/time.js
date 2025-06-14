@@ -78,8 +78,6 @@ function playAlarm(nowDate) {
             }      
         }
     }
-
-    
 }
 
 document.querySelector(".main-button").addEventListener("click", () => {
