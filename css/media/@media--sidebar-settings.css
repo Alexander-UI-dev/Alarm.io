@@ -1,0 +1,16 @@
+@media (max-width: 450px) {
+    .overlay .sidebar-settings {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .overlay .sidebar-settings ul > li:nth-child(2), .overlay .sidebar-settings ul > li:nth-child(3), .overlay .sidebar-settings ul > li:nth-child(4) {
+        column-gap: 0;
+    }
+
+    .overlay .sidebar-settings ul > li:nth-child(2) label[for="repeat-sound"] {
+        margin-right: 10px;
+    }
+}

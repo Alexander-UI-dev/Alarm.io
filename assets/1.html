@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IndexedDB experements</title>
+    </head>
+    <body>
+        <input type="file" name="musicFile" id="music-file" accept="audio/*">
+        <button type="button" id="add-new-music-database">Add database</button>
+        <button type="button" id="play-music">Play music</button>
+        <script>
+            const btnAddMusicDatabase = document.getElementById("add-new-music-database");
+            const btnPlayMusic = document.getElementById("play-music");
+            
+            btnAddMusicDatabase.addEventListener("click", () => {
+                const inputFile = document.getElementById("music-file").files[0];
+                const request = indexedDB.open("MusicFilesDatabase", 1);
+                
+                request.onerror = e => {
+                    console.error(e.target.error);
+                }
+
+                request.onupgradeneeded = () => {
+                    const db = request.result;
+                    const store = db.createObjectStore("musicFiles", {keyPath: "id", autoIncrement: true});
+                    store.createIndex("name", "name", {unique: true});
+                }
+
+                request.onsuccess = () => {
+                    const db = request.result;
+                    const tr = db.transaction("musicFiles", "readwrite");
+                    const store = tr.objectStore("musicFiles");
+                    store.put({
+                        name: inputFile.name,
+                        type: inputFile.type,
+                        size: inputFile.size,
+                        lastModified: inputFile.lastModified,
+                        data: inputFile
+                    }) 
+                }
+            })
+
+            btnPlayMusic.addEventListener("click", () => {
+                const request = indexedDB.open("MusicFilesDatabase", 1);
+                request.onerror = (e) => {
+                    console.error(e.target.error);
+                }
+
+                request.onsuccess = () => {
+                    const db = request.result;
+                    const tr = db.transaction("musicFiles", "readwrite");
+                    const store = tr.objectStore("musicFiles");
+                    const nameIndex = store.index("name");
+
+                    const nameQuery = nameIndex.get(document.getElementById("music-file").files[0].name);
+                    nameQuery.onsuccess = () => {
+                        const music = nameQuery.result;
+                        const file = music.data;
+                        const url = URL.createObjectURL(file);
+                        const audio = new Audio()
+                        audio.src = url;
+                        audio.play();
+                    }
+                }
+            })
+        </script> 
+    </body>
+</html>

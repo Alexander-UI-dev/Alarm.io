@@ -1,0 +1,5 @@
+@media (max-width: 500px) {
+    .popular-times .popular-time i {
+        visibility: hidden;
+    }
+}

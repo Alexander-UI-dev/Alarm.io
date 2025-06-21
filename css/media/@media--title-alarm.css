@@ -1,0 +1,30 @@
+@media (max-width: 410px) {
+    .title-alarm {
+        grid-column: 1/4;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 310px) {
+    .title-alarm {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 260px) {
+    .title-alarm {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 240px) {
+    .title-alarm {
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

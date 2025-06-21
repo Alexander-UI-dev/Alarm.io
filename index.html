@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/switch.css">
+        <link rel="stylesheet" href="./css/slider.css">
+        <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/media/@media--header.css">
+        <link rel="stylesheet" href="./css/media/@media--time-box.css">
+        <link rel="stylesheet" href="./css/media/@media--title-alarm.css">
+        <link rel="stylesheet" href="./css/media/@media--popular-time.css">
+        <link rel="stylesheet" href="./css/media/@media--sidebar-settings.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+        <title>Будильник онлайн 3</title>
+    </head>
+    <body>
+        <div class="start-div"></div>
+        <div class="main-title">Онлайн будильник</div>
+        <button class="btn-preferens" title="Настройки">
+            <i class="fa fa-sliders" aria-hidden="true"></i>
+        </button>
+        <main class="main-container">
+            <div class="time-box">
+                <span class="hours">15</span>
+                <span class="r">:</span>
+                <span class="minutes">16</span>
+            </div>
+            <span class="date">Понедельник, 26 мая</span>    
+        </main>
+        <div class="overlay">
+            <div class="sidebar-settings">
+                <ul>
+                    <li>
+                        <span>Настройки будильника</span>
+                        <button type="button" class="close-btn-settings">
+                            <i class="fa fa-times" aria-hidden="true" style="color: #fb7085;"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <label for="repeat-sound">Повторять звуки будильника</label>
+                        <label class="switch">
+                            <input type="checkbox" name="repeatSound" id="repeat-sound" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="change-value-select" style="width: 250px">Отражать текущее время при установки будильника</label>
+                        <label class="switch">
+                            <input type="checkbox" name="repeatSound" id="change-value-select" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="number-font-checkbox">Цифровой шрифт</label>
+                        <label class="switch">
+                            <input type="checkbox" name="numberFont" id="number-font-checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="number-volume">Громкость будильника</label>
+                        <input type="number" name="valueVolume" id="number-volume" value="20">
+                        <input type="range" name="valueVolume" id="range-volume" class="range" value="20" max="100" min="0" step="1">
+                    </li>
+                    <li>
+                        <span>Цвет</span>
+                        <div class="btn-color-container">
+                            <button type="button" style="background-color: white; color: white;" class="btn-color active-color" id="white"></button>
+                            <button type="button" style="background-color: orange; color: orange;" class="btn-color" id="orange"></button>
+                            <button type="button" style="background-color: red; color: red;" class="btn-color" id="red"></button>
+                            <button type="button" style="background-color: green; color: green;" class="btn-color" id="green"></button>
+                            <button type="button" style="background-color: #1976D2; color: #1976D2;" class="btn-color"></button>
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="btn" id="btn-memory-settings">Запомнить настройки</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-music">
+                <ul>
+                    <li>
+                        <span>Добавить композицию</span>
+                        <button type="button" class="close-btn-settings">
+                            <i class="fa fa-times" aria-hidden="true" style="color: #fb7085;"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <form id="music-form">
+                            <label id="label-name" for="name-input" style="margin-top: 20px;">Введите имя композиции:</label>
+                            <b style="display: none;" id="title-b">Название должно быть оригинальным!</b>
+                            <input type="text" name="nameInput" id="name-input" placeholder="Имя" class="text-fild" required>
+                            
+                            <select name="urlOrFile" id="url-file" class="select">
+                                <option value="URL">URL</option>
+                                <option value="file">File</option>
+                            </select>
+
+                            <label id="label-url" for="url-input" style="margin-top: 10px;">Введите URL композиции:</label>
+                            <input type="url" name="urlInput" id="url-input" placeholder="URL" class="text-fild" required>
+
+                            <label id="label-file" for="file-input" style="margin-top: 10px; display: none;">Выберете файл композиции:</label>
+                            <div>
+                                <input type="file" name="fileInput" id="file-input" accept="audio/*"> <!--accept="audio/*"-->
+                                <button type="button" class="btn fake-input" id="fake-file-input">Выбрать файл</button>
+                            </div>
+
+                            <button type="submit" class="btn" id="add-new-music">Добавить музыку</button>
+                            <button type="button" class="btn" id="delete-new-music" 
+                                style="display: none; background-color: rgb(206, 105, 117); margin-top: 20px;">
+                                    Удалить композицию
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span class="title-alarm">Установить время будильника:</span>
+        <div class="install-alarm">
+            <div class="hours_swiper swiper-block">
+                <div class="swiper swiperH">
+                    <div class="swiper-wrapper"></div>
+                </div>
+            </div>
+            <span class="title-time-hours">Часы</span>
+            <div class="minutes_swiper swiper-block">
+                <div class="swiper swiperM">
+                    <div class="swiper-wrapper"></div>
+                </div>
+            </div>
+            <span class="title-time-minutes">Минуты</span>
+            <select name="hours" id="selectHours" class="select"></select>
+            <select name="minutes" id="selectMinutes" class="select"></select>
+        </div>
+        <div class="install-alarm-day">
+            <span>День недели</span>
+            <select name="dayOfWeek" id="day-of-week" class="select">
+                <option value="1">Понедельник</option>
+                <option value="2">Вторник</option>
+                <option value="3">Среда</option>
+                <option value="4">Четверг</option>
+                <option value="5">Пятница</option>
+                <option value="6">Суббота</option>
+                <option value="0">Воскресенье</option>
+            </select>
+        </div>
+        <div class="popular-times"></div>
+        <div class="music-alarm">
+            <select name="music" id="selectMusic" class="select"></select>
+            <button type="button" class="btn" id="btn-music">Добавить свою композицию</button>
+            <button type="button" class="btn" id="btn-change-music" style="display: none; background-color: #ce6975;">
+                Редактировать или удалить композицию
+            </button>
+        </div>
+        <div class="name-alarm">
+            <span class="title-alarm-name">Название будильника:</span>
+            <input value="Будильник" type="text" name="nameAlarm" id="inputNameAlarm" class="text-fild">
+        </div>
+        <button type="button" class="btn main-button">Установить будильник</button>
+        <script src="./js/isMobile.js"></script>
+        <script src="./js/sidebar-settings.js"></script>
+        <script src="./js/time.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script src="./js/swiperAlarm.js"></script>
+        <script src="./js/popularTime.js"></script>
+        <script src="./js/music.js"></script>
+        <script src="./js/sidebar-music.js"></script>
+        <script src="./js/fileManager.js"></script>
+    </body>
+</html>

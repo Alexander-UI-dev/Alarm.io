@@ -1,0 +1,58 @@
+@media (max-width: 485px) {
+    .main-container .time-box span {
+        font-size: 130px;
+    }
+}
+
+
+@media (max-width: 410px) {
+    .main-container .time-box span {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 335px) {
+    .main-container .time-box span {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-container .time-box span {
+        font-size: 90px;
+    }
+}
+
+@media (max-width: 305px) {
+    .main-container .time-box span {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 270px) {
+    .main-container .date {
+        font-size: 0;
+    }
+    
+    .main-container .date::before {
+        font-size: small;
+    }
+}
+
+@media (max-width: 250px) {
+    .main-container .time-box span {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 225px) {
+    .main-container .time-box span {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 175px) {
+    .main-container .time-box span {
+        font-size: 30px;
+    }
+}
